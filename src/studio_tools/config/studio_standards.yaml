@@ -1,0 +1,41 @@
+# Studio Standards - Validation Rules
+# These rules are enforced across all studio assets
+
+standards:
+  naming:
+    asset_pattern: "^[A-Z][a-z]+_[a-z]+(_[0-9]{3})?$"
+    shot_pattern: "^SQ[0-9]{3}_SH[0-9]{3}$"
+    
+  geometry:
+    max_polygon_count: 1000000
+    min_vertex_count: 3
+    require_uv_maps: true
+    require_vertex_colors: false
+    
+  materials:
+    required_channels:
+      - diffuse
+      - specular
+      - normal
+    supported_texture_formats:
+      - jpg
+      - png
+      - exr
+      - tif
+    texture_resolution_min: 1024
+    texture_resolution_max: 8192
+    
+  rendering:
+    min_render_samples: 4
+    default_render_samples: 6
+    render_time_limit: 3600  # seconds
+    
+  file_organization:
+    require_versioning: true
+    version_format: "v{number:03d}"
+    archive_older_than_days: 90
+    
+  documentation:
+    require_description: true
+    require_artist_credit: true
+    require_modification_log: true

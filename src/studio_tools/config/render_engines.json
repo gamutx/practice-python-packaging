@@ -1,0 +1,33 @@
+{
+  "render_engines": {
+    "arnold": {
+      "executable": "kick",
+      "version": "6.2",
+      "supported_filetypes": [".ass", ".obj", ".fbx", ".abc"],
+      "default_samples": 6,
+      "default_threads": 0,
+      "plugins_path": "/opt/arnold/plugins",
+      "settings": {
+        "bucket_size": 64,
+        "threads": 0,
+        "memory_limit": 2048
+      }
+    },
+    "renderman": {
+      "executable": "prman",
+      "version": "24.0",
+      "supported_filetypes": [".rib", ".abc", ".usd"],
+      "default_samples": 256,
+      "plugins_path": "/opt/renderman/plugins",
+      "settings": {
+        "pixelfilter": "gaussian",
+        "pixelsamples": 4
+      }
+    }
+  },
+  "common_settings": {
+    "output_format": "exr",
+    "color_space": "linear",
+    "bit_depth": 16
+  }
+}

@@ -1,0 +1,40 @@
+# Main Studio Pipeline Configuration
+# This YAML file demonstrates including configuration files in Python packages
+
+pipeline:
+  name: "VFX Studio Pipeline"
+  version: "1.0.0"
+  
+  # Asset management settings
+  assets:
+    base_path: "/studio/assets"
+    supported_formats:
+      - fbx
+      - abc
+      - usd
+      - obj
+    naming_convention: "{type}_{name}_{version:03d}"
+    
+  # Shot management settings
+  shots:
+    base_path: "/studio/shots"
+    sequence_format: "SQ{number:03d}"
+    shot_format: "SH{number:03d}"
+    
+  # Publishing settings
+  publishing:
+    versioning_scheme: "semantic"  # semantic, date-based, or sequential
+    archive_path: "/studio/archive"
+    max_versions: 10
+    
+  # Render settings
+  rendering:
+    default_engine: "arnold"
+    output_path: "/studio/renders"
+    
+  # Validation rules
+  validation:
+    check_polygon_count: true
+    check_materials: true
+    check_naming_conventions: true
+    max_polygon_count: 1000000
